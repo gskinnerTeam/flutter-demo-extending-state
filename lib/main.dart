@@ -84,7 +84,7 @@ class _SomePageWithAnimationsUsingMixinsState<SomePageWithAnimations> extends St
   }
 
   @override
-  Widget build(BuildContext context) => SomeAnimatedContent(anim3, anim3, anim3);
+  Widget build(BuildContext context) => SomeAnimatedContent(anim1, anim2, anim3);
 }
 
 /// //////////////////////////////////////
@@ -106,7 +106,7 @@ class _SomePageWithAnimationsState<SomePageWithAnimations> extends MultiAnimatio
   }
 
   @override
-  Widget build(BuildContext context) => SomeAnimatedContent(anim3, anim3, anim3);
+  Widget build(BuildContext context) => SomeAnimatedContent(anim1, anim2, anim3);
 }
 
 /// This is shared between both examples to reduce code, usually you'd probably just implement this within the parent build method
@@ -124,6 +124,7 @@ class SomeAnimatedContent extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text("TITLE"),
           // Content 1 - Fades in 2nd
           FadeTransition(
             opacity: anim2,
