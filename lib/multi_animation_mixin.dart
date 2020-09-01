@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-mixin MultiAnimationStateMixin on State {
+mixin MultiAnimationStateMixin on State, TickerProviderStateMixin {
   AnimationController anim1;
   AnimationController anim2;
   AnimationController anim3;
@@ -8,9 +8,9 @@ mixin MultiAnimationStateMixin on State {
   @override
   void initState() {
     var defaultDuration = Duration(milliseconds: 350);
-    anim1 = AnimationController(vsync: this as TickerProviderStateMixin, duration: defaultDuration);
-    anim2 = AnimationController(vsync: this as TickerProviderStateMixin, duration: defaultDuration);
-    anim3 = AnimationController(vsync: this as TickerProviderStateMixin, duration: defaultDuration);
+    anim1 = AnimationController(vsync: this, duration: defaultDuration);
+    anim2 = AnimationController(vsync: this, duration: defaultDuration);
+    anim3 = AnimationController(vsync: this, duration: defaultDuration);
     super.initState();
   }
 
